@@ -1,0 +1,31 @@
+Report for Dataset: airq
+Generated on: 2025-12-03 16:05:40
+Total runtime: 1577.3282 (ms)
+========================================================================================================================
+
+
+airq: {mcar, RMSE, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      0.4566033107        0.8745323596        0.1404015309    
+  0.1      0.3797397553        0.8942813733        0.1120923733    
+
+
+
+airq: {mcar, RUNTIME[ms], default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05   213704.1893005371      1.2099742889       30.8654308319    
+  0.1   249719.0086841583      1.0000000000        5.3954124451    
+
+
+
+airq: {mcar, RUNTIME_LOG, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      5.3298130358        0.0827761420        1.4894723434    
+  0.1      5.3974516022        0.0000000000        0.7320246493    
+
+
+Dictionary of Results:
+{'airq': {'mcar': {'MeanImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.8745323595926726, 'RUNTIME': 1.2099742889404297, 'RUNTIME_LOG': 0.08277614197766422}}, '0.1': {'scores': {'RMSE': 0.8942813733447318, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}}}, 'SoftImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.14040153086123414, 'RUNTIME': 30.86543083190918, 'RUNTIME_LOG': 1.4894723433998371}}, '0.1': {'scores': {'RMSE': 0.11209237329874971, 'RUNTIME': 5.395412445068359, 'RUNTIME_LOG': 0.7320246493471423}}}}, 'DeepMVI': {'default_params': {'0.05': {'scores': {'RMSE': 0.4566033106573649, 'RUNTIME': 213704.1893005371, 'RUNTIME_LOG': 5.329813035838722}}, '0.1': {'scores': {'RMSE': 0.3797397552835075, 'RUNTIME': 249719.00868415833, 'RUNTIME_LOG': 5.397451602232925}}}}}}}

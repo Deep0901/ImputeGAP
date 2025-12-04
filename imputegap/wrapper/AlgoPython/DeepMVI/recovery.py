@@ -42,6 +42,9 @@ if __name__ == '__main__' :
     ts.load_series(utils.search_path("chlorine"))
     print(f"{ts.data.shape = }")
 
+    # ts = TimeSeries()
+    # ts.load_series("./my_path/my_file.txt")
+    # ts.print()
     # contaminate the time series with MCAR pattern
     ts_m = ts.Contamination.mcar(ts.data)
 

@@ -1,0 +1,62 @@
+
+The dataset contains a large number of values (2, 131400), which may be too much for some algorithms to handle efficiently. Consider reducing the number of series or the volume of data.
+
+(SYS) The dataset is loaded from ./imputegap/datasets/daily-min-temp
+
+Benchmarking module has reduced the shape to (2, 2500).
+
+MeanImpute is tested with mcar, started at 2025-12-04 12:46:14.
+done!
+
+
+SoftImpute is tested with mcar, started at 2025-12-04 12:46:18.
+done!
+
+
+DeepMVI is tested with mcar, started at 2025-12-04 12:46:19.
+/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/wrapper/AlgoPython/DeepMVI/transformer.py:95: RuntimeWarning: Mean of empty slice
+  mean = np.nanmean(input_feats,axis=0)
+/home/deeps/deepmvi-seminar/.venv/lib/python3.12/site-packages/numpy/lib/nanfunctions.py:1879: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+Traceback (most recent call last):
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/runner_benchmark.py", line 23, in <module>
+    bench.eval(algorithms=my_algorithms, datasets=my_datasets, patterns=my_patterns, x_axis=range, metrics=my_metrics, optimizers=my_opt)
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/recovery/benchmark.py", line 945, in eval
+    algo.impute(params=opti_params, tr_ratio=dl_ratio)
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/recovery/imputation.py", line 1938, in impute
+    self.recov_data = deep_mvi(incomp_data=self.incomp_data, max_epoch=max_epoch, patience=patience, lr=lr, tr_ratio=tr_ratio, logs=self.logs, verbose=self.verbose)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/algorithms/deep_mvi.py", line 44, in deep_mvi
+    recov_data = deep_mvi_recovery(input=incomp_data, max_epoch=max_epoch, patience=patience, lr=lr, tr_ratio=tr_ratio, verbose=verbose)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/wrapper/AlgoPython/DeepMVI/recovery.py", line 32, in deep_mvi_recovery
+    temp = transformer_recovery(cont_data_matrix, max_epoch, patience, lr, verbose=verbose)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/wrapper/AlgoPython/DeepMVI/transformer.py", line 155, in transformer_recovery
+    best_state_dict = train(model,train_loader,val_loader,device, max_epoch=max_epoch, patience=patience, lr=lr, seed=seed, verbose=verbose)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/wrapper/AlgoPython/DeepMVI/transformer.py", line 36, in train
+    loss = model(inp_,mask.to(device),residuals.to(device),context_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/wrapper/AlgoPython/DeepMVI/model.py", line 224, in forward
+    mean = self.core(in_series,residuals,context_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/ImputeGAP/imputegap/wrapper/AlgoPython/DeepMVI/model.py", line 183, in core
+    attn_mask = self.pool(context_info[3])
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/deeps/deepmvi-seminar/.venv/lib/python3.12/site-packages/torch/nn/modules/pooling.py", line 651, in forward
+    return F.avg_pool1d(
+           ^^^^^^^^^^^^^
+RuntimeError: Given input size: (450x1x2). Calculated output size: (450x1x0). Output size is too small

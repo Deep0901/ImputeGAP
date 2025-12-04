@@ -1,0 +1,31 @@
+Report for Dataset: chlorine
+Generated on: 2025-12-03 16:06:34
+Total runtime: 1577.3282 (ms)
+========================================================================================================================
+
+
+chlorine: {mcar, RMSE, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      0.3067167420        0.8933316605        0.2798667280    
+  0.1      0.6980757966        0.8146907889        0.3302649602    
+
+
+
+chlorine: {mcar, RUNTIME[ms], default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05   977094.5429801941      1.0000000000       11.0664367676    
+  0.1   124285.7277393341      1.0000000000        6.9432258606    
+
+
+
+chlorine: {mcar, RUNTIME_LOG, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      5.9899365878        0.0000000000        1.0440078069    
+  0.1      5.0944212596        0.0000000000        0.8415612929    
+
+
+Dictionary of Results:
+{'chlorine': {'mcar': {'MeanImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.8933316604818049, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}, '0.1': {'scores': {'RMSE': 0.8146907889273416, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}}}, 'SoftImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.27986672798976786, 'RUNTIME': 11.066436767578125, 'RUNTIME_LOG': 1.0440078068510026}}, '0.1': {'scores': {'RMSE': 0.3302649602019373, 'RUNTIME': 6.943225860595703, 'RUNTIME_LOG': 0.841561292926863}}}}, 'DeepMVI': {'default_params': {'0.05': {'scores': {'RMSE': 0.3067167420184568, 'RUNTIME': 977094.5429801941, 'RUNTIME_LOG': 5.989936587780281}}, '0.1': {'scores': {'RMSE': 0.6980757966257733, 'RUNTIME': 124285.7277393341, 'RUNTIME_LOG': 5.0944212596156575}}}}}}}

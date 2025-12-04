@@ -2798,3 +2798,64 @@ class Imputation:
                 return self
 
 
+
+# # ---- DeepMVI imputer (added for reproducibility integration) ----
+# from imputegap.imputers.base import BaseImputer  # adjust import if your project uses different path
+# try:
+#     from imputegap.algorithms.deepmvi import deepmvi as _deepmvi_func
+# except Exception:
+#     _deepmvi_func = None
+
+# class DeepMVI(BaseImputer):
+#     """
+#     ImputeGAP wrapper for the original DeepMVI author implementation.
+#     This class follows the Contributing guide: implement `impute(self, params=None)` and set algorithm string.
+#     """
+#     def __init__(self, incomp_data, *args, **kwargs):
+#         super().__init__(incomp_data, *args, **kwargs)
+#         self.algorithm = "deepmvi"
+#         self.params = kwargs.get("params", None)
+
+#     def impute(self, params=None):
+#         params = params or self.params or {}
+#         # Use the function implemented in imputegap/algorithms/deepmvi.py
+#         if _deepmvi_func is None:
+#             # Lazy import attempt
+#             from imputegap.algorithms.deepmvi import deepmvi as _deepmvi_local
+#             self.recov_data = _deepmvi_local(self.incomp_data)
+#         else:
+#             self.recov_data = _deepmvi_func(self.incomp_data)
+#         return self.recov_data
+# # ---- end DeepMVI imputer ----
+
+
+
+from imputegap.imputers.base import BaseImputer   # correct path
+
+# lazy import — avoids crash if author code missing
+try:
+    from imputegap.algorithms.deepmvi import deepmvi as _deepmvi_fn
+except Exception:
+    _deepmvi_fn = None
+
+
+class DeepMVI(BaseImputer):
+    """
+    ImputeGAP wrapper for the original DeepMVI author implementation.
+    Follows the Contributing Guide: implement impute() and set algorithm name.
+    """
+    def __init__(self, incomp_data, *args, **kwargs):
+        super().__init__(incomp_data, *args, **kwargs)
+        self.algorithm = "deepmvi"
+        self.params = kwargs.get("params", {})
+
+    def impute(self, params=None):
+        params = params or self.params
+        if _deepmvi_fn is None:
+            # fallback if initial import failed
+            from imputegap.algorithms.deepmvi import deepmvi as _deepmvi_local
+            self.recov_data = _deepmvi_local(self.incomp_data, params)
+        else:
+            self.recov_data = _deepmvi_fn(self.incomp_data, params)
+
+        return self.recov_data

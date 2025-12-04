@@ -1,0 +1,31 @@
+Report for Dataset: gasdrift
+Generated on: 2025-12-04 23:26:29
+Total runtime: 1866.3421 (ms)
+========================================================================================================================
+
+
+gasdrift: {mcar, RMSE, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      1.3309282065        1.1287828762        0.2873582271    
+  0.1      1.1435293433        1.0084033121        0.2567468890    
+
+
+
+gasdrift: {mcar, RUNTIME[ms], default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05   557419.6181297302     27.2185802460      1776.7412662506   
+  0.1   583897.5565433502      2.4511814117      1040.0333404541   
+
+
+
+gasdrift: {mcar, RUNTIME_LOG, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      5.7461822494        1.4348654681        3.2496241893    
+  0.1      5.7663366578        0.3893754545        3.0170472617    
+
+
+Dictionary of Results:
+{'gasdrift': {'mcar': {'MeanImpute': {'default_params': {'0.05': {'scores': {'RMSE': 1.1287828761504421, 'RUNTIME': 27.21858024597168, 'RUNTIME_LOG': 1.4348654681332618}}, '0.1': {'scores': {'RMSE': 1.0084033120547284, 'RUNTIME': 2.451181411743164, 'RUNTIME_LOG': 0.38937545454194306}}}}, 'SoftImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.2873582270630453, 'RUNTIME': 1776.7412662506104, 'RUNTIME_LOG': 3.2496241893017515}}, '0.1': {'scores': {'RMSE': 0.256746889030975, 'RUNTIME': 1040.0333404541016, 'RUNTIME_LOG': 3.017047261744118}}}}, 'DeepMVI': {'default_params': {'0.05': {'scores': {'RMSE': 1.3309282064729875, 'RUNTIME': 557419.6181297302, 'RUNTIME_LOG': 5.746182249442868}}, '0.1': {'scores': {'RMSE': 1.143529343281226, 'RUNTIME': 583897.5565433502, 'RUNTIME_LOG': 5.766336657847691}}}}}}}

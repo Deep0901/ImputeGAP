@@ -414,3 +414,15 @@ featureemb = 8
 target_strategy = "hybrid"
 use_guide = true
 mask_sensor = []
+
+# Default params for DeepMVI adapter
+[deepmvi]
+kernel_size = 10
+block_size = 10
+use_embed = true
+use_context = true
+use_local = false
+p = 32
+nhead = 2
+embedding_size = 10
+lr = 0.001

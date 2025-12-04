@@ -1,0 +1,31 @@
+Report for Dataset: gasdrift
+Generated on: 2025-12-04 20:28:01
+Total runtime: 1136.6057 (ms)
+========================================================================================================================
+
+
+gasdrift: {mcar, RMSE, default_params}
+ Rate        DeepMVI       
+
+ 0.05      1.3309282065    
+  0.1      1.1435293433    
+
+
+
+gasdrift: {mcar, RUNTIME[ms], default_params}
+ Rate        DeepMVI       
+
+ 0.05   532553.1811714172  
+  0.1   587856.2862873077  
+
+
+
+gasdrift: {mcar, RUNTIME_LOG, default_params}
+ Rate        DeepMVI       
+
+ 0.05      5.7263629833    
+  0.1      5.7692711667    
+
+
+Dictionary of Results:
+{'gasdrift': {'mcar': {'DeepMVI': {'default_params': {'0.05': {'scores': {'RMSE': 1.3309282064729875, 'RUNTIME': 532553.1811714172, 'RUNTIME_LOG': 5.726362983258273}}, '0.1': {'scores': {'RMSE': 1.143529343281226, 'RUNTIME': 587856.2862873077, 'RUNTIME_LOG': 5.769271166720723}}}}}}}

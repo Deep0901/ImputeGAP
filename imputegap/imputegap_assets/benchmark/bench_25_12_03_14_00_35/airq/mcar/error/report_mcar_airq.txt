@@ -1,0 +1,34 @@
+Report for Dataset: airq
+Generated on: 2025-12-03 14:18:46
+Total runtime: 1090.7279 (ms)
+========================================================================================================================
+
+
+airq: {mcar, RMSE, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      0.4566033107        0.8745323596        0.1404015309    
+  0.1      0.3797397553        0.8942813733        0.1120923733    
+  0.2          nan             0.9475036416        0.2797159546    
+
+
+
+airq: {mcar, RUNTIME[ms], default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05   515384.0329647064      1.5604496002       35.5992317200    
+  0.1   559134.5143318176      1.0000000000       37.7709865570    
+  0.2      1.0000000000        1.0000000000       31.0173034668    
+
+
+
+airq: {mcar, RUNTIME_LOG, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      5.7121309596        0.1932497463        1.5514406254    
+  0.1      5.7475163013        0.0000000000        1.5771583285    
+  0.2      0.0000000000        0.0000000000        1.4916040391    
+
+
+Dictionary of Results:
+{'airq': {'mcar': {'MeanImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.8745323595926726, 'RUNTIME': 1.5604496002197266, 'RUNTIME_LOG': 0.1932497462791883}}, '0.1': {'scores': {'RMSE': 0.8942813733447318, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}, '0.2': {'scores': {'RMSE': 0.9475036415934444, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}}}, 'SoftImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.14040153086123414, 'RUNTIME': 35.5992317199707, 'RUNTIME_LOG': 1.5514406254060866}}, '0.1': {'scores': {'RMSE': 0.11209237329874971, 'RUNTIME': 37.770986557006836, 'RUNTIME_LOG': 1.5771583285042152}}, '0.2': {'scores': {'RMSE': 0.2797159546269944, 'RUNTIME': 31.017303466796875, 'RUNTIME_LOG': 1.4916040391128513}}}}, 'DeepMVI': {'default_params': {'0.05': {'scores': {'RMSE': 0.4566033106573649, 'RUNTIME': 515384.0329647064, 'RUNTIME_LOG': 5.7121309596112075}}, '0.1': {'scores': {'RMSE': 0.3797397552835075, 'RUNTIME': 559134.5143318176, 'RUNTIME_LOG': 5.747516301275328}}, '0.2': {'scores': {'RMSE': nan, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}}}}}}

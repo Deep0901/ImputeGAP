@@ -1,5 +1,7 @@
 from imputegap.recovery.manager import TimeSeries
 from imputegap.tools import utils
+# import numpy as np
+
 
 # initialize the time series object
 ts = TimeSeries()

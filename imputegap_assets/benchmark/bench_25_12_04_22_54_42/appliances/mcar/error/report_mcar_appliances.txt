@@ -1,0 +1,31 @@
+Report for Dataset: appliances
+Generated on: 2025-12-04 23:25:48
+Total runtime: 1866.3421 (ms)
+========================================================================================================================
+
+
+appliances: {mcar, RMSE, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      1.0479901078        1.0900991127        0.3335948175    
+  0.1      0.9384478902        0.9930583669        0.4030366715    
+
+
+
+appliances: {mcar, RUNTIME[ms], default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05   331383.3868503571      1.4698505402       554.8021793365   
+  0.1   345678.3540248871      1.0000000000       449.1584300995   
+
+
+
+appliances: {mcar, RUNTIME_LOG, default_params}
+ Rate        DeepMVI            MeanImpute          SoftImpute     
+
+ 0.05      5.5203307323        0.1672731763        2.7441381584    
+  0.1      5.5386721854        0.0000000000        2.6523995552    
+
+
+Dictionary of Results:
+{'appliances': {'mcar': {'MeanImpute': {'default_params': {'0.05': {'scores': {'RMSE': 1.090099112730863, 'RUNTIME': 1.4698505401611328, 'RUNTIME_LOG': 0.16727317632416416}}, '0.1': {'scores': {'RMSE': 0.9930583669212519, 'RUNTIME': 1.0, 'RUNTIME_LOG': 0.0}}}}, 'SoftImpute': {'default_params': {'0.05': {'scores': {'RMSE': 0.33359481750683945, 'RUNTIME': 554.8021793365479, 'RUNTIME_LOG': 2.7441381583709266}}, '0.1': {'scores': {'RMSE': 0.4030366715330271, 'RUNTIME': 449.1584300994873, 'RUNTIME_LOG': 2.6523995552167237}}}}, 'DeepMVI': {'default_params': {'0.05': {'scores': {'RMSE': 1.0479901077953788, 'RUNTIME': 331383.38685035706, 'RUNTIME_LOG': 5.5203307322665776}}, '0.1': {'scores': {'RMSE': 0.9384478902390054, 'RUNTIME': 345678.3540248871, 'RUNTIME_LOG': 5.538672185380208}}}}}}}
